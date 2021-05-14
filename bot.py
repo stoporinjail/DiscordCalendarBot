@@ -1,9 +1,11 @@
 import config
+os.environ.get("TEAM_TOKEN")
 import logging
 import discord
 import asyncio
 from BotClass import Bot
 from commands.Help import Help
+import os
 from commands.GetStarted import GetStarted
 from commands.Setup import Setup
 from commands.Calendar import Calendar
@@ -61,4 +63,5 @@ async def on_message(message):
         await bot._commandsManager.process_message(message)
 
 # run the discord client
+os.environ.get("DIS_TOKEN")
 bot.run_client(config.bot['token'])
